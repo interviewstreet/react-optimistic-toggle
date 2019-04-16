@@ -1,2 +1,2 @@
 # react-optimistic-toggle
-React component for
+React component to optimistically handle async toggles.

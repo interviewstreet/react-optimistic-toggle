@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import noop from 'lodash/noop';
 
-class OptimisticToggleUtil extends Component {
+class OptimisticToggle extends Component {
   
   static defaultProps = {
     initialValue: false,
@@ -42,4 +42,4 @@ class OptimisticToggleUtil extends Component {
   }
 }
 
-export default OptimisticToggleUtil;
+export default OptimisticToggle;

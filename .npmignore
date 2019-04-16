@@ -1,0 +1,11 @@
+# exclude source files and node modules
+src
+node_modules
+
+# exlude dot files
+.babelrc
+.gitignore
+.npmignore
+
+# exclude lock file
+yarn.lock
