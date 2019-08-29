@@ -1,10 +1,12 @@
-import React, { Component, useState, useEffect, useRef } from 'react';
-import noop from 'lodash/noop';
+import React, { Component } from 'react';
+
+const noop = () => {};
 
 class OptimisticToggle extends Component {
   static defaultProps = {
     initialValue: false,
     action: noop,
+    children: noop,
   };
 
   currentPromise = null;

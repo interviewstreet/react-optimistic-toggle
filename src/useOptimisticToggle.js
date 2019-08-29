@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 
-function useOptimisticToggle({ initialValue = false, action }) {
+const noop = () => {};
+
+function useOptimisticToggle({ initialValue = false, action = noop }) {
   const [stateOptimistic, setStateOptimistic] = useState(initialValue);
   const refCurrentPromise = useRef();
   const refFailedCount = useRef(0);
