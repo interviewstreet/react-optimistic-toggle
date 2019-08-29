@@ -1,7 +1,7 @@
 {
   "name": "react-optimistic-toggle",
-  "version": "0.2.0",
-  "description": "React component to optimistically handle async toggles",
+  "version": "0.3.0",
+  "description": "React component to build Optimistic UIs.",
   "main": "lib/OptimisticToggle.js",
   "repository": "https://github.com/interviewstreet/react-optimistic-toggle.git",
   "author": "itaditya <adityaa803@gmail.com>",
@@ -12,7 +12,7 @@
     "test:debug": "node --inspect-brk ./node_modules/.bin/jest --runInBand --watch",
     "build": "babel src -d lib --ignore 'src/**/*.test.js'",
     "docs": "styleguidist server",
-    "docs:dev": "nodemon -x 'npm run docs' --ignore src/",
+    "docs:dev": "nodemon -x 'npm run docs' --ignore src/ --ignore lib/",
     "docs:build": "styleguidist build"
   },
   "peerDependencies": {
