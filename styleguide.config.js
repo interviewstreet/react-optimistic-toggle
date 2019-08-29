@@ -5,8 +5,17 @@ const pkg = require('./package.json');
 module.exports = {
   title: 'Docs - React Optimistic Toggle',
   version: pkg.version,
-  components: 'src/**/*.js',
   usageMode: 'expand',
+  sections: [
+    {
+      name: 'Getting Started',
+      content: 'src/getting-started.docs.md',
+    },
+    {
+      name: 'Examples',
+      components: 'src/**/*.js',
+    },
+  ],
   ribbon: {
     url: 'https://www.npmjs.com/package/react-optimistic-toggle',
     text: 'Install from npm',

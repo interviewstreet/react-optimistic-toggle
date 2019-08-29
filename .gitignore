@@ -1,3 +1,4 @@
 # exclude lib files and node modules
+styleguide
 node_modules
 lib

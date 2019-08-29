@@ -1,5 +1,6 @@
 # exclude source files and node modules
 src
+styleguide
 node_modules
 
 # exlude dot files
