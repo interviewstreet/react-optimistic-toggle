@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect, useRef } from 'react';
 import noop from 'lodash/noop';
 
 class OptimisticToggle extends Component {
-  
   static defaultProps = {
     initialValue: false,
     action: noop,
@@ -15,7 +14,7 @@ class OptimisticToggle extends Component {
     optimisticState: this.props.initialValue,
   };
 
-  handleToggle = (event) => {
+  handleToggle = event => {
     const newToggled = !this.state.optimisticState;
     this.setState({
       optimisticState: newToggled,
@@ -25,14 +24,17 @@ class OptimisticToggle extends Component {
 
     this.currentPromise = actionPromise;
 
-    actionPromise.catch((error) => {
+    actionPromise.catch(error => {
       this.failedCount++;
       if (this.currentPromise === actionPromise) {
-        this.setState((prevState) => ({
-          optimisticState: this.failedCount % 2 === 0 ? prevState.optimisticState : !prevState.optimisticState,
-        }), () => {
-          this.failedCount = 0;
-        });
+        this.setState(
+          prevState => ({
+            optimisticState: this.failedCount % 2 === 0 ? prevState.optimisticState : !prevState.optimisticState,
+          }),
+          () => {
+            this.failedCount = 0;
+          },
+        );
       }
     });
   };

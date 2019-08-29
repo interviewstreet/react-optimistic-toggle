@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 import { SynchronousPromise } from 'synchronous-promise';
 
-import OptimisticToggle from '../src/OptimisticToggle';
+import OptimisticToggle from './OptimisticToggle';
 
 configure({ adapter: new Adapter() });
 
@@ -27,7 +27,7 @@ describe('Test <OptimisticToggle />', () => {
 
     wrapper = shallow(
       <OptimisticToggle action={action}>
-        {(toggle, setToggle) => <input type="checkbox" checked={toggle} onClick={setToggle} />}
+        {(toggle, setToggle) => <input type="checkbox" checked={toggle} onChange={setToggle} />}
       </OptimisticToggle>,
     );
   });
@@ -38,7 +38,7 @@ describe('Test <OptimisticToggle />', () => {
 
   it('stay checked when action succeeds', () => {
     expect(wrapper.prop('checked')).toEqual(false);
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     expect(wrapper.prop('checked')).toEqual(true);
     promise.resolve();
     wrapper.update();
@@ -47,7 +47,7 @@ describe('Test <OptimisticToggle />', () => {
 
   it('revert checked when action fails', () => {
     expect(wrapper.prop('checked')).toEqual(false);
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     expect(wrapper.prop('checked')).toEqual(true);
     promise.reject();
     wrapper.update();
@@ -55,11 +55,11 @@ describe('Test <OptimisticToggle />', () => {
   });
 
   it('Works for Race Condition: o Ap x Bp o Br x Ars x', () => {
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     const promiseA = promise;
     expect(wrapper.prop('checked')).toEqual(true);
 
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     const promiseB = promise;
     expect(wrapper.prop('checked')).toEqual(false);
 
@@ -73,15 +73,15 @@ describe('Test <OptimisticToggle />', () => {
   });
 
   it('Works for Race Condition: o Ap x Bp o Cp x Br x Cr x Ars x', () => {
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     const promiseA = promise;
     expect(wrapper.prop('checked')).toEqual(true);
 
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     const promiseB = promise;
     expect(wrapper.prop('checked')).toEqual(false);
 
-    wrapper.simulate('click');
+    wrapper.simulate('change');
     const promiseC = promise;
     expect(wrapper.prop('checked')).toEqual(true);
 

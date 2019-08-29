@@ -1,6 +1,6 @@
 {
   "name": "react-optimistic-toggle",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React component to optimistically handle async toggles",
   "main": "lib/OptimisticToggle.js",
   "repository": "https://github.com/interviewstreet/react-optimistic-toggle.git",
@@ -8,7 +8,11 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "babel src -d lib"
+    "test:debug": "node --inspect-brk ./node_modules/.bin/jest --runInBand --watch",
+    "build": "babel src -d lib --ignore 'src/**/*.test.js'",
+    "docs": "styleguidist server",
+    "docs:dev": "nodemon -x 'npm run docs' --ignore src/",
+    "docs:build": "styleguidist build"
   },
   "peerDependencies": {
     "react": "^0.14 || ^15.0.0 || ^ 16.0.0",
@@ -22,12 +26,15 @@
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.7.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "synchronous-promise": "^2.0.7"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-styleguidist": "^9.1.16",
+    "synchronous-promise": "^2.0.7",
+    "webpack": "^4.39.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.3"
