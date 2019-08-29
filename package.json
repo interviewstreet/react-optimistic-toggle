@@ -1,6 +1,6 @@
 {
   "name": "react-optimistic-toggle",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "React component to build Optimistic UIs.",
   "main": "lib/OptimisticToggle.js",
   "repository": "https://github.com/interviewstreet/react-optimistic-toggle.git",
