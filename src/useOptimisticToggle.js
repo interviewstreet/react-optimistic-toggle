@@ -1,13 +1,20 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, SyntheticEvent } from 'react';
 
 const noop = () => {};
 
-function useOptimisticToggle({ initialValue = false, action = noop }) {
+type Props = {
+  /** Initial Value of the Checkbox */
+  initialValue?: boolean,
+  /** On-change handler that returns a Promise Object */
+  action?: (toggleState: boolean, event: SyntheticEvent) => Promise<any>,
+};
+
+function useOptimisticToggle({ initialValue = false, action = noop }: Props) {
   const [stateOptimistic, setStateOptimistic] = useState(initialValue);
   const refCurrentPromise = useRef();
   const refFailedCount = useRef(0);
 
-  function handleToggle(event) {
+  function handleToggle(event: SyntheticEvent) {
     const newToggled = !stateOptimistic;
     setStateOptimistic(newToggled);
 
