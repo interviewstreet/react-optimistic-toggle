@@ -1,6 +1,6 @@
 import { useState, useRef, SyntheticEvent } from 'react';
 
-const noop = () => {};
+import { noopPromise } from './util';
 
 type Props = {
   /** Initial Value of the Checkbox */
@@ -9,7 +9,7 @@ type Props = {
   action?: (toggleState: boolean, event: SyntheticEvent) => Promise<any>,
 };
 
-function useOptimisticToggle({ initialValue = false, action = noop }: Props) {
+function useOptimisticToggle({ initialValue = false, action = noopPromise }: Props) {
   const [stateOptimistic, setStateOptimistic] = useState(initialValue);
   const refCurrentPromise = useRef();
   const refFailedCount = useRef(0);

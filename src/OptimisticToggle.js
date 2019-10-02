@@ -1,7 +1,7 @@
 // @flow
 import React, { Component, SyntheticEvent } from 'react';
 
-const noop = () => {};
+import { noop, noopPromise } from './util';
 
 type Props = {
   /** Initial Value of the Checkbox */
@@ -19,7 +19,7 @@ type State = {
 class OptimisticToggle extends Component<Props, State> {
   static defaultProps: Props = {
     initialValue: false,
-    action: noop,
+    action: noopPromise,
     children: noop,
   };
 
