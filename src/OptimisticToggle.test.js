@@ -1,12 +1,7 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import { shallow, configure } from 'enzyme';
 import { SynchronousPromise } from 'synchronous-promise';
 
 import OptimisticToggle from './OptimisticToggle';
-
-configure({ adapter: new Adapter() });
-
 
 describe('Test <OptimisticToggle />', () => {
   /**
@@ -18,6 +13,7 @@ describe('Test <OptimisticToggle />', () => {
    * x: checked
    */
   let wrapper, promise;
+
   beforeEach(() => {
     const action = () => {
       // promise will be overwritten everytime we simulate click
