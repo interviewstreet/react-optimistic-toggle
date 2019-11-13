@@ -40,5 +40,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.3"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [ "<rootDir>/jest.setup.js" ]
   }
 }
