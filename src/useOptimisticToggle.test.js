@@ -35,7 +35,7 @@ describe('Test useOptimisticToggle()', () => {
     promise = null;
   });
 
-  it.only('stay checked when action succeeds', () => {
+  it('stay checked when action succeeds', () => {
     expect(wrapper.prop('checked')).toEqual(false);
     wrapper.simulate('change');
     expect(wrapper.prop('checked')).toEqual(true);
