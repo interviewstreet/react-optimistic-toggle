@@ -1,6 +1,6 @@
 {
   "name": "react-optimistic-toggle",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "React component to build Optimistic UIs.",
   "main": "lib/OptimisticToggle.js",
   "repository": "https://github.com/interviewstreet/react-optimistic-toggle.git",
@@ -20,13 +20,13 @@
     "react-dom": "^0.14 || ^15.0.0 || ^ 16.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
-    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
-    "@babel/plugin-transform-runtime": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-transform-flow-strip-types": "^7.6.3",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
@@ -36,10 +36,10 @@
     "react-dom": "^16.9.0",
     "react-styleguidist": "^9.1.16",
     "synchronous-promise": "^2.0.7",
-    "webpack": "^4.39.3"
+    "webpack": "^4.41.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.3"
+    "@babel/runtime": "^7.7.0"
   },
   "jest": {
     "setupFilesAfterEnv": [ "<rootDir>/jest.setup.js" ]
